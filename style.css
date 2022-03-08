@@ -51,25 +51,35 @@
       font-family: Arial, Helvetica, sans-serif;
   }
 
-  div.contenido-superior{
-      padding: 20px;
+  div.contenedor{
+      max-width: 1100px;
+      margin: 0 auto;
   }
 
-  div.contenido-inferior > div {
-      padding: 20px;
+  div.contenedor-principal::after{
+      clear: both;
+      content: '';
+      display: block;
   }
+  @media only screen and (min-width: 768px){
+      div.contenido-principal > * {/* Primer elemento que sea un hijo */
+        padding: 0 20px;
 
-  @media only screen and (min-width:768px){
-
-    div.contenido-inferior > div{
-        width: 50%;
-        float: left;
-    }
-    div.contenedor{
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
+      }
+      div.principal{
+          width: 50%;
+          float: left;
+          margin-left: 25%;
+      }
+      aside.primera{
+          margin-left: -75%;/* este elem mide 25 y el principal 50, y lo quiero posicionar al margen izq */
+          width: 25%;
+          float: left;
+      }
+      aside.segunda{
+          width: 25%;
+          float: right;
+      }
 
 
   }
